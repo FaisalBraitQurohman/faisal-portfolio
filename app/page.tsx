@@ -79,29 +79,46 @@ export default function Home() {
         {/* Timeline Section */}
         <section className="mb-20">
           <h2 className="text-3xl font-bold mb-12 text-center">My Journey</h2>
-          <div className="max-w-4xl mx-auto relative">
-            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500 to-blue-500"></div>
+          <div className="max-w-6xl mx-auto relative">
+            {/* Centered Timeline Line */}
+            <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500 to-blue-500"></div>
             
             {[
               {
                 date: "2023-12-01",
                 title: "Portfolio Website",
-                description: "Created personal portfolio with Next.js and modern design"
+                description: "Created personal portfolio with Next.js and modern design",
+                side: "left"
               },
               {
-                date: "2023-06-01", 
+                date: "2023-09-01", 
                 title: "Web Development",
-                description: "Started learning modern web technologies and frameworks"
+                description: "Started learning modern web technologies and frameworks",
+                side: "right"
+              },
+              {
+                date: "2023-06-01",
+                title: "Programming Journey",
+                description: "Began my journey in software development and coding",
+                side: "left"
               },
               {
                 date: "2023-01-01",
-                title: "Programming Journey",
-                description: "Began my journey in software development and coding"
+                title: "First Steps",
+                description: "Discovered my passion for technology and programming",
+                side: "right"
               }
             ].map((item, index) => (
-              <div key={index} className="relative mb-12 ml-16">
-                <div className="absolute -left-8 w-4 h-4 bg-purple-500 rounded-full border-4 border-black"></div>
-                <div className="bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-purple-500 transition-colors">
+              <div key={index} className={`relative mb-16 ${item.side === 'left' ? 'pr-8' : 'pl-8'}`}>
+                {/* Timeline Dot */}
+                <div className={`absolute top-6 w-4 h-4 bg-purple-500 rounded-full border-4 border-black z-10 ${
+                  item.side === 'left' ? 'right-0 transform translate-x-2' : 'left-0 transform -translate-x-2'
+                }`}></div>
+                
+                {/* Content Card */}
+                <div className={`bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-purple-500 transition-all duration-300 hover:scale-105 ${
+                  item.side === 'left' ? 'text-right' : 'text-left'
+                }`}>
                   <div className="text-purple-400 text-sm mb-2">{item.date}</div>
                   <h3 className="text-xl font-bold mb-2">{item.title}</h3>
                   <p className="text-gray-300">{item.description}</p>
