@@ -110,10 +110,8 @@ export default function Home() {
               }
             ].map((item, index) => (
               <div key={index} className={`relative mb-8 ${item.side === 'left' ? 'pr-12' : 'pl-12'}`}>
-                {/* Timeline Dot */}
-                <div className={`absolute top-4 w-3 h-3 bg-purple-500 rounded-full border-2 border-black z-10 ${
-                  item.side === 'left' ? 'right-0 transform translate-x-1.5' : 'left-0 transform -translate-x-1.5'
-                }`}></div>
+                {/* Timeline Dot - Centered on the line */}
+                <div className="absolute top-4 left-1/2 transform -translate-x-1/2 w-3 h-3 bg-purple-500 rounded-full border-2 border-black z-10"></div>
                 
                 {/* Content */}
                 <div className={`${item.side === 'left' ? 'text-right' : 'text-left'}`}>
