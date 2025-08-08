@@ -109,12 +109,12 @@ export default function Home() {
                 side: "right"
               }
             ].map((item, index) => (
-              <div key={index} className="relative mb-8">
+              <div key={index} className="relative mb-8 flex items-center">
                 {/* Timeline Dot - Centered on the line */}
                 <div className="absolute left-1/2 transform -translate-x-1/2 w-3 h-3 bg-purple-500 rounded-full border-2 border-black z-10"></div>
                 
-                {/* Content - Positioned exactly beside the dot */}
-                <div className={`absolute top-0 ${item.side === 'left' ? 'right-full pr-4 text-right' : 'left-full pl-4 text-left'}`}>
+                {/* Content - Positioned horizontally beside the dot */}
+                <div className={`flex-1 ${item.side === 'left' ? 'pr-12 text-right' : 'pl-12 text-left'}`}>
                   <div className="text-purple-400 text-sm mb-1 font-mono">{item.date}</div>
                   <div className="text-white font-medium">{item.title}</div>
                   <div className="text-gray-400 text-sm">{item.description}</div>
