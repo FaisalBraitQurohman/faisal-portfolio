@@ -81,7 +81,8 @@ export default function Home() {
           <h2 className="text-2xl sm:text-3xl font-bold mb-10 sm:mb-12 text-center">My Timeline</h2>
           <div className="max-w-4xl mx-auto relative px-2">
             {/* Centered Timeline Line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500 to-blue-500"></div>
+            <div className="absolute sm:hidden left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500 to-blue-500"></div>
+            <div className="absolute hidden sm:block left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500 to-blue-500"></div>
             
             {[
               {
@@ -111,10 +112,10 @@ export default function Home() {
             ].map((item, index) => (
               <div key={index} className="relative mb-8 flex items-center">
                 {/* Timeline Dot - Centered on the line */}
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-3 h-3 bg-purple-500 rounded-full border-2 border-black z-10"></div>
+                <div className="absolute sm:left-1/2 sm:transform sm:-translate-x-1/2 left-[14px] w-3 h-3 bg-purple-500 rounded-full border-2 border-black z-10"></div>
                 
                 {/* Content - Positioned horizontally beside the dot */}
-                <div className={`flex-1 ${item.side === 'left' ? 'pr-6 sm:pr-12 text-right' : 'pl-6 sm:pl-12 text-left'}`}>
+                <div className={`flex-1 ${item.side === 'left' ? 'pl-8 sm:pr-12 sm:text-right' : 'pl-8 sm:pl-12 sm:text-left'}`}>
                   <div className="text-purple-400 text-xs sm:text-sm mb-1 font-mono">{item.date}</div>
                   <div className="text-white font-medium text-sm sm:text-base">{item.title}</div>
                   <div className="text-gray-400 text-xs sm:text-sm">{item.description}</div>
