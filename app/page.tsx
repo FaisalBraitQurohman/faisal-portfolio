@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800">
@@ -35,7 +33,7 @@ export default function Home() {
           </h2>
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-              I'm a passionate web developer with expertise in modern web technologies. 
+              I&apos;m a passionate web developer with expertise in modern web technologies. 
               I love creating beautiful, functional, and user-friendly websites that make a difference.
               My journey in web development started with curiosity and has evolved into a passion for 
               building digital experiences that connect people.
@@ -127,10 +125,10 @@ export default function Home() {
         {/* Contact Section */}
         <section className="text-center">
           <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-8">
-            Let's Work Together
+            Let&apos;s Work Together
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
-            I'm always open to new opportunities and exciting projects.
+            I&apos;m always open to new opportunities and exciting projects.
           </p>
           <div className="flex justify-center space-x-6">
             <a
