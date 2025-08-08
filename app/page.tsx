@@ -78,8 +78,8 @@ export default function Home() {
 
         {/* Timeline Section */}
         <section className="mb-20">
-          <h2 className="text-3xl font-bold mb-12 text-center">My Journey</h2>
-          <div className="max-w-6xl mx-auto relative">
+          <h2 className="text-3xl font-bold mb-12 text-center">My Timeline</h2>
+          <div className="max-w-4xl mx-auto relative">
             {/* Centered Timeline Line */}
             <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500 to-blue-500"></div>
             
@@ -109,19 +109,17 @@ export default function Home() {
                 side: "right"
               }
             ].map((item, index) => (
-              <div key={index} className={`relative mb-16 ${item.side === 'left' ? 'pr-8' : 'pl-8'}`}>
+              <div key={index} className={`relative mb-8 ${item.side === 'left' ? 'pr-12' : 'pl-12'}`}>
                 {/* Timeline Dot */}
-                <div className={`absolute top-6 w-4 h-4 bg-purple-500 rounded-full border-4 border-black z-10 ${
-                  item.side === 'left' ? 'right-0 transform translate-x-2' : 'left-0 transform -translate-x-2'
+                <div className={`absolute top-4 w-3 h-3 bg-purple-500 rounded-full border-2 border-black z-10 ${
+                  item.side === 'left' ? 'right-0 transform translate-x-1.5' : 'left-0 transform -translate-x-1.5'
                 }`}></div>
                 
-                {/* Content Card */}
-                <div className={`bg-gray-900 p-6 rounded-lg border border-gray-800 hover:border-purple-500 transition-all duration-300 hover:scale-105 ${
-                  item.side === 'left' ? 'text-right' : 'text-left'
-                }`}>
-                  <div className="text-purple-400 text-sm mb-2">{item.date}</div>
-                  <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                  <p className="text-gray-300">{item.description}</p>
+                {/* Content */}
+                <div className={`${item.side === 'left' ? 'text-right' : 'text-left'}`}>
+                  <div className="text-purple-400 text-sm mb-1 font-mono">{item.date}</div>
+                  <div className="text-white font-medium">{item.title}</div>
+                  <div className="text-gray-400 text-sm">{item.description}</div>
                 </div>
               </div>
             ))}
